@@ -32,7 +32,6 @@ class Main {
      */
     void parseXML (String filePath) {
         SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
-
         try {
             SAXParser saxParser = saxParserFactory.newSAXParser();
             saxParser.parse(filePath, handler);
@@ -47,9 +46,6 @@ class Main {
         }
     }
 
-    /**
-     * Write xml file
-     */
     private void writeXML () {
         try {
             OutputStream outputStream = new FileOutputStream(/*exists*/(filePathOut), true);
