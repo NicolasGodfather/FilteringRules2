@@ -5,4 +5,4 @@
 <rule name="b" type="sub" weight="56"></rule>
 <rule name="c" type="child" weight="99"></rule>
 <rule name="d" type="root" weight="45"></rule>
-</rules>
+</rules><?xml version="1.0" encoding="UTF-8"?>

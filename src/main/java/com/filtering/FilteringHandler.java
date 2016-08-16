@@ -8,7 +8,6 @@ import java.util.TreeMap;
 
 /**
  * Realization filtering
- *
  * @author Nicolas Asinovich.
  */
 class FilteringHandler extends DefaultHandler {
@@ -28,11 +27,6 @@ class FilteringHandler extends DefaultHandler {
         }
     }
 
-    /**
-     * Made logic filtering
-     * @param attributes
-     */
-    // TODO: 13.07.2016 CHECK THIS
     public void getFilteringRule (Attributes attributes) {
         Rule ruleName = dataRule.get(attributes.getValue("name"));
         RuleType type = RuleType.valueOf(attributes.getValue("type").toUpperCase());

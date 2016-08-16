@@ -18,23 +18,15 @@ import java.util.TreeMap;
  * @author Nicolas Asinovich.
  */
 class Main {
-
-    private FilteringHandler handler = new FilteringHandler();
+    private static FilteringHandler handler = new FilteringHandler();
     private static String filePathOut = "src/main/resources/output.xml";
 
     public static void main (String[] args) {
-        new Main().parseXML("src/main/resources/input.xml");
-    }
-
-    /**
-     * Read xml file
-     * @param filePath
-     */
-    void parseXML (String filePath) {
-        SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
         try {
+
+            SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
             SAXParser saxParser = saxParserFactory.newSAXParser();
-            saxParser.parse(filePath, handler);
+            saxParser.parse("src/main/resources/input.xml", handler);
 
             writeXML();
         } catch (ParserConfigurationException e) {
@@ -46,9 +38,9 @@ class Main {
         }
     }
 
-    private void writeXML () {
+    private static void writeXML () {
         try {
-            OutputStream outputStream = new FileOutputStream(/*exists*/(filePathOut), true);
+            OutputStream outputStream = new FileOutputStream((filePathOut), true);
             XMLStreamWriter out = XMLOutputFactory.newInstance().createXMLStreamWriter(
                     new OutputStreamWriter(outputStream));
             TreeMap<String, Rule> data = handler.getDataRule();
